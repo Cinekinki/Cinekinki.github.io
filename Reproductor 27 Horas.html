@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="ReproductorCSS.css">
+    <link rel="stylesheet" type="text/css" href="MediaQueriesReproductorCSS.css">
+    <link rel="stylesheet" type="text/css" href="DesplegableCSS.css">
+    <script src="scripts.js"></script>
+    <title>CineKinki.es</title>
+</head>
+
+<div class="rectangulo" onclick="toggleMenu()">☰ Categorías</div>
+
+        <div class="menu-desplegable" id="menuDesplegable">
+            <a href="index.html">Menu principal</a>
+            <a href="Contacto.html">Contacto</a>
+            <a href="Agradecimientos.html">Agradecimientos</a>
+        </div>
+<body>
+    <section id="Video" class="seccion">
+        <h1>27 Horas</h1>
+        <div class="video-container">
+            <video controls>
+                <source src="27 horas.mkv" type="video/mp4">
+                Tu navegador no soporta el formato de video.
+            </video>
+        </div>
+        <p id="descripcion">
+            Drama sobre la delincuencia juvenil, el paro y las drogas. Jon, un muchacho de veinte años, 
+            se levanta a las siete de la mañana y a partir de ese momento podemos ver cómo vive la amistad, el amor, 
+            las relaciones familiares y su oscura pasión por las drogas.
+        </p>
+
+    </section>
+
+    <div class="Socialshare">
+
+    <button onclick="shareOnTwitter()">Twitter</button>
+    <button onclick="shareOnInstagram()">Instagram</button>
+    <button onclick="shareOnFacebook()">Facebook</button>
+
+    <script>
+
+        function shareOnTwitter() {
+            var url = encodeURIComponent('https://cinekinki.es/Reproductor%2027%20Horas.html');
+            window.open('https://twitter.com/intent/tweet?url=' + url);
+        }
+
+        function shareOnInstagram() {
+            window.open('https://www.instagram.com/tu_usuario/');
+        }
+
+        function shareOnFacebook() {
+            var url = encodeURIComponent('https://www.ejemplo.com');
+            window.open('https://www.facebook.com/sharer/sharer.php?u=' + url);
+        }
+    </script>
+
+    </div>
+
+</body>
+
+</html>

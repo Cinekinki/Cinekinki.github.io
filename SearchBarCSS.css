@@ -1,0 +1,18 @@
+header {
+    position: absolute;
+  }
+  
+  #searchBar {
+    position: absolute; /* Establece la posición absoluta con respecto a la sección */
+    cursor: pointer;
+    display: flex;
+    top: 40px;
+    right: 20px;
+    width: 300px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #000;
+    border-radius: 4px;
+    font-size: 16px;
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+  }

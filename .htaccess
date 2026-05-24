@@ -1,0 +1,76 @@
+## Habilitar la compresión Gzip
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/plain text/html text/xml text/css application/xml application/xhtml+xml application/rss+xml application/javascript application/x-javascript application/json
+  AddOutputFilterByType DEFLATE image/svg+xml image/x-icon
+</IfModule>
+
+## Habilitar el almacenamiento en caché del navegador
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault "access plus 1 month"
+
+  # Imágenes y otros recursos estáticos
+  ExpiresByType image/jpg "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/gif "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType image/x-icon "access plus 1 year"
+
+  # CSS y JavaScript
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+  ExpiresByType application/x-javascript "access plus 1 month"
+
+  # Archivos de video
+  ExpiresByType video/mp4 "access plus 1 year"
+  ExpiresByType video/mpeg "access plus 1 year"
+</IfModule>
+
+## Configuración de ETags para evitar conflictos de caché
+<IfModule mod_headers.c>
+  Header unset ETag
+</IfModule>
+FileETag None
+
+## Configuración de Compresión Brotli (si el servidor lo soporta)
+<IfModule mod_brotli.c>
+  AddOutputFilterByType BROTLI_COMPRESS text/plain text/html text/xml text/css application/xml application/xhtml+xml application/rss+xml application/javascript application/x-javascript application/json
+</IfModule>
+
+## Evitar el acceso a archivos sensibles
+<FilesMatch "\.(htaccess|htpasswd|ini|log|sh|bak)$">
+  Require all denied
+</FilesMatch>
+
+## Redirección a HTTPS si aplica
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTPS} off
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+</IfModule>
+
+## Controlar el tamaño máximo de subida (si es necesario)
+<IfModule mod_php.c>
+  php_value upload_max_filesize 64M
+  php_value post_max_size 64M
+</IfModule>
+
+## Permitir el acceso a imágenes (prevenir problemas)
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{REQUEST_URI} !\.(jpg|jpeg|png|gif|bmp|webp|svg|ico)$ [NC]
+</IfModule>
+
+## Habilitar CORS para recursos compartidos
+<IfModule mod_headers.c>
+  Header set Access-Control-Allow-Origin "*"
+</IfModule>
+
+## Mejorar la seguridad
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set X-XSS-Protection "1; mode=block"
+</IfModule>

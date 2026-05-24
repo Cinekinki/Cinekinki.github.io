@@ -1,0 +1,196 @@
+body{
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: white; /* Cambia el color de fondo según tus preferencias */
+  z-index: 100; /* Asegura que esté en la parte superior */
+}
+
+
+.seccion {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  scroll-behavior: smooth; /* Scroll suave */
+  background-color: white;
+  position: relative; /* Asegura que la posición relativa se aplique al section */
+
+}
+
+
+/* Titulo y texto */
+
+@font-face {
+  font-family: 'PLANK';
+  src: url('PLANK.TTF') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+}
+
+.titulo-inicio{
+  font-size: 200%;
+  font-family: "PLANK"; /* Aplica la fuente personalizada */
+  letter-spacing: 4px;
+  margin-bottom: 1px;
+  position: relative;
+  z-index: 1;
+  padding: 20px;
+  text-shadow: 6px 6px 8px rgba(0, 0, 0, 0.5);
+}
+
+#inicio{
+  font-size: 40px;
+  background-color: black;
+  color: white;
+}
+
+#inicio p{
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-style: solid;
+  border-radius:10px 10px 15px 10px;
+
+  line-height: 1.2;
+  text-align: center; 
+  padding: 50px; 
+  overflow: hidden; 
+  margin-top: 1px;
+  position: relative;
+  font-family: 'Montserrat', sans-serif;
+  text-shadow: 9px 9px 11px rgba(0, 0, 0, 0.5);
+  box-shadow: 8px 8px 10px rgba(0, 0, 0, 0.5);
+
+  
+
+}
+
+.contenido-seccion {
+  text-align: center; /* Centra el contenido del bloque */
+  z-index: 1; /* Coloca el contenido encima de la galería */
+  padding: 20px; /* Espaciado alrededor del contenido */
+
+}
+
+.galeria-imagenes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; /* Cambiar la altura al 100% */
+  display: flex;
+  overflow: hidden;
+  transition: transform 0.7s ease-in-out;
+}
+
+.galeria-imagenes img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Cubrir totalmente el container*/
+  position: absolute;
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.galeria-imagenes img.visible {
+  opacity: 1;
+  transition-delay: 0.5s;
+}
+
+.galeria-imagenes.mobile img{
+  display: none
+}
+
+
+/*Inicio2*/
+
+
+.titulo-inicio2{
+  font-size: 70PX;
+  font-family: "PLANK"; /* Aplica la fuente personalizada */
+  letter-spacing: 4px;
+  position: static;
+  text-align: center;
+}
+
+.contenido-seccion2 img:hover {-webkit-transform:scale(1.4);transform:scale(1.4);}
+
+.contenido-seccion2{
+  overflow: hidden;
+  display: flex;
+  justify-content: center; /* Centra las imágenes horizontalmente */
+  align-items: center; /* Centra las imágenes verticalmente */
+}
+
+.contenido-seccion2 img{
+  max-width: 50%; /* Evita que las imágenes sean más grandes que su contenedor */
+  margin: 50px; 
+  position: static;
+}
+
+/* Pie de pagina */
+
+footer {
+  background-color: black;
+  color: white;
+  text-align: left;
+}
+
+footer h1 {
+  font-size: 25px;
+}
+
+footer img {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px; /* Espacio entre las imágenes y el texto */
+}
+
+.contenido-footer {
+  display: flex;
+  align-items: center; /* Alinea elementos verticalmente en el centro */
+}
+
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.seccion {
+  position: relative; /* Establece la posición relativa para que los elementos internos sean relativos a esta sección */
+}
+
+/* Estilo para el scrollbar */
+::-webkit-scrollbar {
+  width: 8px; /* Ancho del scrollbar */
+}
+
+/* Estilo para el track (fondo del scrollbar) */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Color de fondo */
+}
+
+/* Estilo para la barra deslizante */
+::-webkit-scrollbar-thumb {
+  background: #888; /* Color de la barra deslizante */
+  border-radius: 4px; /* Borde redondeado */
+}
+
+/* Estilo cuando se pasa el mouse sobre el scrollbar */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Cambio de color al pasar el mouse */
+}

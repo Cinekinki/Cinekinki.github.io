@@ -1,0 +1,154 @@
+@media (orientation: portrait) {
+  #servicio h1 {
+      font-size: 38px;
+      text-align: center;
+      text-decoration-line: underline;
+  }
+
+}
+
+@media (max-width: 700px) {
+  .galeria {
+    display: flex;
+    flex-wrap: wrap; /* Asegura que las imágenes se envuelvan en varias filas */
+    justify-content: space-around; /* Centra las imágenes en el contenedor */
+  }
+
+  .imagen {
+    width: auto; /* Establece el ancho de cada imagen (puedes ajustar este valor según tus necesidades) */
+    border: 2px solid #000000;
+    border-radius: 8px;
+  }
+}
+
+@font-face {
+  font-family: 'PLANK';
+  src: url('PLANK.TTF') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+}
+
+h1{
+  font-size: 70PX;
+  font-family: "PLANK"; /* Aplica la fuente personalizada */
+  letter-spacing: 4px;
+  position: static;
+  text-align: center;
+}
+
+body{
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: white; /* Cambia el color de fondo según tus preferencias */
+  z-index: 100; /* Asegura que esté en la parte superior */
+}
+
+.titulo-servicio{
+    margin-top: 100px;
+    font-size: 70PX;
+    font-family: "PLANK"; /* Aplica la fuente personalizada */
+    letter-spacing: 4px;
+    position: static;
+    text-align: center;
+  }
+
+  .galeria {
+    display: flex;
+    overflow-x: auto; /* Permite desplazamiento horizontal si las imágenes no caben */
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .imagen {
+    margin: 20px;
+    position: relative;
+    overflow: hidden;
+    font-size: 14px;
+  }
+
+  
+  .imagen img {
+    width: 200px; /* Establece el ancho fijo para las imágenes */
+    height: 300px;
+    border: 2px solid #000000;
+    border-radius: 8px;
+  }
+  
+
+  .texto {
+    background-color: rgb(0, 0, 0);
+    color: #fff;
+    text-align: center;
+    padding: 8px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+
+  .texto-superpuesto {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    top: 20px;
+    color: #FFFFFF;
+    font-size: 18px;
+    margin: 10px; /* Ajusta el margen según sea necesario */
+    opacity: 0; /* Inicialmente, el texto está oculto */
+    transition: opacity 0.5s ease; /* Agrega una transición suave a la opacidad */
+}
+
+
+
+.imagen:hover .texto-superpuesto {
+  opacity: 1; /* Muestra el texto al pasar el ratón sobre la imagen */
+}
+
+.imagen:hover img {
+  filter: blur(8px); /* Aplica el desenfoque al pasar el ratón sobre la imagen */
+}
+
+/* Estilo para el scrollbar */
+::-webkit-scrollbar {
+  width: 8px; /* Ancho del scrollbar */
+}
+
+/* Estilo para el track (fondo del scrollbar) */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Color de fondo */
+}
+
+/* Estilo para la barra deslizante */
+::-webkit-scrollbar-thumb {
+  background: #888; /* Color de la barra deslizante */
+  border-radius: 4px; /* Borde redondeado */
+}
+
+/* Estilo cuando se pasa el mouse sobre el scrollbar */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Cambio de color al pasar el mouse */
+}
+
+
+
+@media (orientation: portrait) {
+
+  header{
+    top: 10px;
+  }
+
+  #searchBar {
+      height: 40px;
+      z-index: 1000;
+  }
+}
+
+
+

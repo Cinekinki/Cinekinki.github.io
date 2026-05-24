@@ -1,0 +1,43 @@
+@font-face {
+    font-family: 'PLANK';
+    src: url('PLANK.TTF') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+  }
+
+  @media (orientation: portrait) {
+    #letrero {
+        margin-left: 100px;
+    }
+}
+
+#letrero {
+    width: 190px;
+    height: 194px;
+    background-color: white;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 150px;
+  }
+
+  #texto {
+      position: absolute;
+      white-space: nowrap;
+      color: black;
+      font-size: 30px;
+      animation: desplazar 4s linear infinite;
+      font-family: "PLANK";
+      letter-spacing: 4px;
+  }
+
+  @keyframes desplazar {
+      0% {
+          transform: translateX(100%);
+      }
+      100% {
+          transform: translateX(-100%);
+      }
+}

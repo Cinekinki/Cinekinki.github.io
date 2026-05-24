@@ -1,0 +1,131 @@
+/* Estilo para el scrollbar */
+::-webkit-scrollbar {
+  width: 8px; /* Ancho del scrollbar */
+}
+
+/* Estilo para el track (fondo del scrollbar) */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Color de fondo */
+}
+
+/* Estilo para la barra deslizante */
+::-webkit-scrollbar-thumb {
+  background: #888; /* Color de la barra deslizante */
+  border-radius: 4px; /* Borde redondeado */
+}
+
+/* Estilo cuando se pasa el mouse sobre el scrollbar */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Cambio de color al pasar el mouse */
+}
+
+@font-face {
+  font-family: 'PLANK';
+  src: url('PLANK.TTF') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+}
+
+@media (orientation: portrait) {
+  .seccion-directorio h1{
+      font-size: 40px;
+      text-align: center;
+  }
+
+  .galeria {
+    display: flex;
+    flex-wrap: wrap; /* Asegura que las imágenes se envuelvan en varias filas */
+    justify-content: space-around; /* Centra las imágenes en el contenedor */
+  }
+
+  .archivo {
+    width: auto; /* Establece el ancho de cada imagen (puedes ajustar este valor según tus necesidades) */
+    height: auto;
+  }
+  
+}
+
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: white; /* Cambia el color de fondo según tus preferencias */
+  z-index: 100; /* Asegura que esté en la parte superior */
+}
+
+
+.titulo-directorio {
+    font-size: 70PX;
+    font-family: "PLANK"; /* Aplica la fuente personalizada */
+    letter-spacing: 4px;
+    position: static;
+    text-align: center;
+}
+
+
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.archivo {
+  text-decoration: none;
+  color: #333;
+  display: inline-block;
+  margin: 15px;
+  transition: background-color 0.3s ease;
+  position: relative;
+  
+}
+
+.archivo img{
+  width: 200px;
+  height: 300px;
+  border: 2px solid #000000;
+  border-radius: 5px;
+}
+
+.archivo:hover {
+  background-color: #f2f2f2;
+}
+
+.thumbnail {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px 5px 0 0; /* Borde redondeado arriba */
+}
+
+.descripcion {
+  padding: 5px;
+}
+
+.emojis {
+  font-size: 20px;
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+
+  background-color: rgb(0, 0, 0);
+  
+  text-align: center;
+  padding: 6px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+
+}
+
+.emojis span{
+  color: white;
+}
+
+.galeria {
+  display: flex;
+  overflow-x: auto; /* Permite desplazamiento horizontal si las imágenes no caben */
+  align-items: center;
+  justify-content: center;
+}
