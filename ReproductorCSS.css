@@ -6,24 +6,16 @@
   }
 
   .video-container {
-    position: relative;
     width: 100%;
-    height: 100%;
-    max-width: 720px; /* opcional */
-    max-height: 200;
-    margin: auto;
-    padding-bottom: 50%; /* relación 16:9 */
-    height: 0;
-    overflow: hidden;
+    max-width: 720px; /* mismo ancho que quieres */
+    margin: 0 auto;
 }
 
 .video-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
-    height: 100%;
+    height: min(55vw, 384px);
     border: none;
+    display: block;
 }
 
   
